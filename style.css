@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* begin animations */
+
+    @keyframes imgHover {
+      0% {width: 100%;}
+      5% {width: 113%;}
+      10% {width: 115%;}
+      100% {width: 115%;}
+    }
+
+    @keyframes imgHoverOff {
+      0% {width: 115%;}
+      5% {width: 102%;}
+      10% {width: 100%;}
+      100% {width: 100%;}
+    }
+
+    @keyframes textHover {
+        0% {color: black; font-size: 1em;}
+        2.5% {color: blue; font-size: 1.035em;}
+        10% {color: blue; font-size: 1.04em;}
+        100% {color: blue; font-size: 1.04em;}
+    }
+
+    @keyframes textHoverOff {
+      0% {color: blue; font-size: 1.04em;}
+      2.5% {color: black; font-size: 1.005em;}
+      10% {color: black; font-size: 1em;}
+      100% {color: black; font-size: 1em;}
+    }
+
+    @keyframes textScroll {
+      0% {color: grey;}
+      0.8333% {color: black;}
+      100% {color: black;}
+    }
+
+    @keyframes textScrollOff {
+      0% {color: black;}
+      0.8333% {color: grey;}
+      100% {color: grey;}
+    }
+
+
+
+/* end animations */
+
+
+
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1em;
+}
+
+body {
+  background-color: white;
+
+}
+
+#page-container, #heading-container, #content-container, {
+  min-width: 300px;
+}
+
+#page-container {
+  background-color: rgba(242,242,242,1);
+}
+
+#heading-container {
+  /*padding: 15px 15px 15px 15px;*/
+  padding: .75em;
+  box-shadow: 0px 0px 1em grey;
+  position: absolute;
+  width: 100%;
+  /*top: -50%;*/
+  z-index: 99;
+  background-color: white;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /*color: black;*/
+}
+
+h1 {
+  font-family: 'Playfair Display SC', serif;
+  letter-spacing: ;
+}
+
+
+span#header-caption {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+span#header-caption .textHover {
+
+}
+
+.textHover{
+  animation-name: textHoverOff;
+  animation-duration: 15s;
+}
+
+.textHover:hover, .textHover:active, .textHover:focus {
+  animation-name: textHover;
+  animation-duration: 15s;
+  cursor: pointer;
+}
+
+
+#content-container {
+  padding: 30px 15px 30px 15px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,ffffff+35,ffffff+100 */
+  background: rgb(242,242,242); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(242,242,242,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+#content-left {
+  opacity: 1;
+  color: grey;
+}
+
+#main-img {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px;
+  color: grey;
+  animation-name: imgHoverOff;
+  animation-duration: 30s;
+}
+
+#main-img:hover, #main-img:active, #main-img:focus {
+  animation-name: imgHover;
+  animation-duration: 30s;
+  cursor: pointer;
+}
+
+#content-left figcaption {
+  margin-top: 15px;
+  color: grey;
+}
+
+
+
+#content-right {
+  color: grey;
+  overflow: auto;
+  animation-name: textScrollOff;
+  animation-duration: 90s;
+}
+
+#content-right ul {
+   margin-left: 30px;
+}
+
+#content-right ul li{
+  list-style-type: square;
+  margin-bottom: 15px;
+}
+
+.text-container {
+  width: 100%;
+  padding: 0 5% 0 5%;
+  margin: 0;
+  overflow: scroll;
+  opacity: 0;
+  height: 100%;
+}
+
+#content-right:active, #content-right:hover, #content-right:focus {
+   animation-name: textScroll;
+   animation-duration: 90s;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+::-ms-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+::-moz-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+::scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  //margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
